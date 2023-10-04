@@ -5,27 +5,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpiraTestConfiguration(
         //following are REQUIRED
         url = "https://rmit.spiraservice.net",
-        login = "S3947682",
-        rssToken = "{DEE2C1F9-FD55-43BE-AF93-B492757F8C75}",
+        login = "s3947682",
+        rssToken = "{76FD8224-935B-4006-A19F-590C3D982CB1}",
         projectId = 78
-
 )
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PlaceOrderTest {
+    @Test
+    @SpiraTestCase(testCaseId = 4061)
+    public void bruh(){
+        assertTrue(true);
+    }
 
-    private static ChromeDriver driver;
-
-
+    public static ChromeDriver driver;
     @BeforeAll
     //Setup my driver here through @BeforeAll, this method is running once
     //all test classes
