@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.time.Duration;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,17 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
         //following are REQUIRED
         url = "https://rmit.spiraservice.net",
         login = "s3947682",
-        rssToken = "{76FD8224-935B-4006-A19F-590C3D982CB1}",
+        rssToken = "{51DDF051-A531-440F-8710-51A2C6263852}",
         projectId = 78
 )
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PlaceOrderTest {
-    @Test
-    @SpiraTestCase(testCaseId = 4061)
-    public void bruh(){
-        assertTrue(true);
-    }
-
     public static ChromeDriver driver;
     @BeforeAll
     //Setup my driver here through @BeforeAll, this method is running once
@@ -33,6 +28,7 @@ public class PlaceOrderTest {
     {
         System.setProperty("Webdriver.chrome.driver","chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
     @Test
